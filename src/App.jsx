@@ -32,7 +32,8 @@ const App = () => {
 
   return (
     <AppStyle>
-      <h1>Você ligou araujo chegou</h1>
+      <h1>Você ligou araujo chegou "TESTE"</h1>
+
       <form onSubmit={handleSubmit(teste)}>
         <Input register={register} name="origem" text="Qual a origem ?" />
         <span>{errors.origem?.message && errors.origem.message}</span>
