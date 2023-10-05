@@ -11,7 +11,7 @@ export const AppStyle = styled.main`
   form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     width: 500px;
     max-width: 90%;
 
