@@ -11,7 +11,7 @@ export const AppStyle = styled.main`
   form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     width: 500px;
     max-width: 90%;
 
@@ -22,6 +22,21 @@ export const AppStyle = styled.main`
 
     span {
       color: red;
+    }
+
+    button {
+      cursor: pointer;
+      font-size: 22px;
+      padding: 10px;
+      background-color: rgba(58, 144, 247, 0.7);
+      color: white;
+      border: solid 2px transparent;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background-color: rgba(58, 144, 247, 1);
+      border: solid 2px rgba(14, 119, 246, 1);
     }
   }
 `;

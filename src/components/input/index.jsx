@@ -1,5 +1,6 @@
 import { StyledInput } from "./style.js";
 
+// eslint-disable-next-line react/prop-types
 export const Input = ({ register, name, text, type }) => {
   if (!type) {
     type = "text";
