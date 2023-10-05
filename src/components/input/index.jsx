@@ -9,7 +9,6 @@ export const Input = ({ register, name, text, type }) => {
     <StyledInput>
       <label htmlFor={name}>{text}</label>
       <input {...register(name)} id={name} type={type} />
-      <></>
     </StyledInput>
   );
 };
