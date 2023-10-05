@@ -35,14 +35,14 @@ const App = () => {
       <h1>Você ligou araujo chegou</h1>
 
       <form onSubmit={handleSubmit(teste)}>
-        <Input register={register} name="origem" text="Qual a origem ?" />
+        <Input register={register} name="origem" text="Local de partida" />
         <span>{errors.origem?.message && errors.origem.message}</span>
-        <Input register={register} name="destino" text="Qual o destino ?" />
+        <Input register={register} name="destino" text="Destino" />
         <span>{errors.destino?.message && errors.destino.message}</span>
         <Input
           register={register}
           name="horarioSaida"
-          text="Qual o horário da saída?"
+          text="Qual o horário da saída ?"
         />
         <span>
           {errors.horarioSaida?.message && errors.horarioSaida.message}

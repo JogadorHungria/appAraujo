@@ -6,6 +6,8 @@ export const AppStyle = styled.main`
   justify-content: center;
   align-items: center;
 
+  font-family: Arial, Helvetica, sans-serif;
+
   form {
     display: flex;
     flex-direction: column;

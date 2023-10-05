@@ -6,6 +6,7 @@ export const StyledInput = styled.div`
   gap: 10px;
 
   input {
-    height: 20px;
+    padding: 5px;
+    font-size: 18px;
   }
 `;
