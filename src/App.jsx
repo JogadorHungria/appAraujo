@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <AppStyle>
-      <h1>Você ligou araujo chegou</h1>
+      <h1>Você ligou Araujo chegou</h1>
 
       <form onSubmit={handleSubmit(teste)}>
         <Input register={register} name="origem" text="Local de partida" />
@@ -68,7 +68,7 @@ const App = () => {
         <Input
           register={register}
           name="idadeCrianca"
-          text="Se tiver qual idade?"
+          text="Caso tenha qual a idade ?"
         />
         <span>
           {errors.idadeCrianca?.message && errors.idadeCrianca.message}
