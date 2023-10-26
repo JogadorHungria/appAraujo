@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Select } from "./components/select";
 import { useState } from "react";
 
+import emailjs from "@emailjs/browser";
+
 const App = () => {
   const [temCriança, setTemCriança] = useState(false);
 
@@ -34,8 +36,29 @@ const App = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
-    alert("Mensagem enviada com sucesso !", { ...data });
+    let textoFormatado = "\n";
+    for (const chave in data) {
+      textoFormatado += `${chave}: ${data[chave]}\n`;
+    }
+
+    emailjs
+      .send(
+        "service_u117khs",
+        "template_vqw9k98",
+        {
+          to_name: "Araujoujoara@hotmail.com",
+          from_name: "AppAraujo",
+          from_email: "Araujoujoara@hotmail.com",
+          message: textoFormatado,
+        },
+        "OMr098E2D4a25g9xg"
+      )
+      .then((response) => {
+        console.log("Email enviado com sucesso", response);
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar o email", error);
+      });
   };
 
   return (
