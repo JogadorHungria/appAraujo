@@ -47,16 +47,18 @@ const App = () => {
         "template_vqw9k98",
         {
           to_name: "Araujoujoara@hotmail.com",
-          from_name: "AppAraujo",
+          from_name: data.name,
           from_email: "Araujoujoara@hotmail.com",
           message: textoFormatado,
         },
         "OMr098E2D4a25g9xg"
       )
       .then((response) => {
+        alert("Email enviado com sucesso");
         console.log("Email enviado com sucesso", response);
       })
       .catch((error) => {
+        alert("Erro ao enviar o email");
         console.error("Erro ao enviar o email", error);
       });
   };
