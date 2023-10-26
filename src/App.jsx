@@ -45,10 +45,22 @@ const App = () => {
           register={register}
           name="horarioSaida"
           text="Qual o horário da saída"
+          type={"time"}
         />
         <span>
           {errors.horarioSaida?.message && errors.horarioSaida.message}
         </span>
+
+        <Input
+          register={register}
+          name="horarioRetorno"
+          text="Qual o horário do retorno"
+          type={"time"}
+        />
+        <span>
+          {errors.horarioRetorno?.message && errors.horarioRetorno.message}
+        </span>
+
         <Select
           placeHolder={"Quantas pessoas"}
           ListOptions={["1", "2", "3", "4", "5", "6"]}
@@ -87,14 +99,6 @@ const App = () => {
         /> */}
         <span>
           {errors.idadeCrianca?.message && errors.idadeCrianca.message}
-        </span>
-        <Input
-          register={register}
-          name="horarioRetorno"
-          text="Qual o horário do retorno"
-        />
-        <span>
-          {errors.horarioRetorno?.message && errors.horarioRetorno.message}
         </span>
 
         <Select
