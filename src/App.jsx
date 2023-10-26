@@ -20,8 +20,8 @@ const App = () => {
     origem: z.string().min(1, { message: "Campo obrigatório!" }),
     destino: z.string().min(1, { message: "Campo obrigatório!" }),
     horarioSaida: z.string().min(1, { message: "Campo obrigatório!" }),
-    horarioRetorno: z.string().min(1, { message: "Campo obrigatório!" }),
-    quantidadePessoas: z.string().optional(),
+    horarioRetorno: z.string(),
+    quantidadePessoas: z.string(),
     temCrianca: z.string().optional(),
     idadeCrianca: z.string().optional(),
     temPedagio: z.string({ message: "Campo obrigatório!" }),
@@ -53,9 +53,8 @@ const App = () => {
         },
         "OMr098E2D4a25g9xg"
       )
-      .then((response) => {
+      .then(() => {
         alert("Email enviado com sucesso");
-        console.log("Email enviado com sucesso", response);
       })
       .catch((error) => {
         alert("Erro ao enviar o email");
