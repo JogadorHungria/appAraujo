@@ -10,13 +10,18 @@ const App = () => {
   const [temCriança, setTemCriança] = useState(false);
 
   const schema = z.object({
+    nome: z.string().min(2, { message: "Campo obrigatório!" }),
+    contato: z
+      .string()
+      .min(11, { message: "Numero invalido" })
+      .max(11, { message: "Numero invalido" }),
     origem: z.string().min(1, { message: "Campo obrigatório!" }),
     destino: z.string().min(1, { message: "Campo obrigatório!" }),
     horarioSaida: z.string().min(1, { message: "Campo obrigatório!" }),
     horarioRetorno: z.string().min(1, { message: "Campo obrigatório!" }),
     quantidadePessoas: z.string().optional(),
     temCrianca: z.string().optional(),
-    idadeCrianca: z.string(),
+    idadeCrianca: z.string().optional(),
     temPedagio: z.string({ message: "Campo obrigatório!" }),
   });
 
@@ -30,6 +35,7 @@ const App = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    alert("Mensagem enviada com sucesso !", { ...data });
   };
 
   return (
@@ -37,8 +43,15 @@ const App = () => {
       <h1>Você ligou Araujo chegou</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
+        <Input register={register} name="nome" text="Seu nome" />
+        <span>{errors.nome?.message && errors.nome.message}</span>
+
+        <Input register={register} name="contato" text="Seu contato" />
+        <span>{errors.contato?.message && errors.contato.message}</span>
+
         <Input register={register} name="origem" text="Local de partida" />
         <span>{errors.origem?.message && errors.origem.message}</span>
+
         <Input register={register} name="destino" text="Destino" />
         <span>{errors.destino?.message && errors.destino.message}</span>
         <Input
@@ -86,7 +99,7 @@ const App = () => {
         {temCriança && (
           <Select
             placeHolder={"Idade da criança"}
-            ListOptions={["10 anos ou  mais", "Abaixo de 10 anos"]}
+            ListOptions={["Até 4 anos", "De 5 a 8 anos", "Acima de 8 anos"]}
             register={register}
             name="idadeCrianca"
           />
@@ -97,9 +110,6 @@ const App = () => {
           name="idadeCrianca"
           text="Caso tenha qual a idade"
         /> */}
-        <span>
-          {errors.idadeCrianca?.message && errors.idadeCrianca.message}
-        </span>
 
         <Select
           placeHolder={"Na sua rota tem pedágio"}
