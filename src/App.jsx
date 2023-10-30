@@ -64,7 +64,9 @@ const App = () => {
 
   return (
     <AppStyle>
-      <h1>Você ligou Araujo chegou</h1>
+      <h1>
+        Você ligou <span>Araujo</span> chegou
+      </h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input register={register} name="nome" text="Seu nome" />

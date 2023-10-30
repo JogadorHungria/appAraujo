@@ -8,6 +8,14 @@ export const AppStyle = styled.main`
 
   font-family: Arial, Helvetica, sans-serif;
 
+  h1 {
+    font-size: 42px;
+
+    span {
+      color: blue;
+    }
+  }
+
   form {
     display: flex;
     flex-direction: column;
